@@ -100,14 +100,11 @@
     CGSize screenSize = [CCDirector sharedDirector].winSize;
     
     CGFloat spriteWidthBoundary = vikingSprite.textureRect.size.width/4;
-    CGFloat spriteHeightBoundary = vikingSprite.textureRect.size.height/4;
     
     CGPoint newPosition = ccp(clampf(tempNode.position.x,
                                      spriteWidthBoundary,
                                      screenSize.width - spriteWidthBoundary) + scaledVelocity.x * deltaTime,
-                              clampf(tempNode.position.y,
-                                     spriteHeightBoundary,
-                                     screenSize.height - spriteHeightBoundary) + scaledVelocity.y * deltaTime);
+                              screenSize.height*0.17f);
     
     [tempNode setPosition:newPosition];
     
